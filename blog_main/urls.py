@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -26,6 +26,7 @@ urlpatterns = [
     # The views represent a views module created in the blog_main directory
     # inside the views module, we will create a home function
     path('', views.home, name='home'),
+    path('category/', include('blogs.urls') )
 ]
 
 # Add the following lines to serve media files during development

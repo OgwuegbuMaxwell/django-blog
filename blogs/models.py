@@ -1,6 +1,8 @@
 from django.db import models
 # Import User
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+
 
 # Create your models here.
 
@@ -47,11 +49,23 @@ class Blog(models.Model):
     # uploads/the year the blog was created/the month/ the day
     featured_image = models.ImageField(upload_to='uploads/%Y/%m/%d')
     short_description = models.TextField(max_length=500)
-    blog_body = models.TextField(max_length=1000)
+    blog_body = models.TextField()
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Draft")
     is_featured = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+    
+    # Code to insure blog_body does not exceed 1000
+    def calculate_word_count(self):
+        return len(self.blog_body.split())
+    
+    def save(self, *args, **kwargs):
+        # Ensure that the word count does not exceed 1000
+        if self.calculate_word_count() > 1000:
+            raise ValidationError("Word cannot Exceed 1000")
+        
+        super().save(*args, **kwargs)
     
     # Remember to install pillow since we are working with image
     # pip install Pillow
