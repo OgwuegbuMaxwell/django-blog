@@ -1,6 +1,6 @@
 
 
-from .models import Category
+from .models import Category, SocialLink
 
 
 def get_categories(request):
@@ -9,3 +9,6 @@ def get_categories(request):
     return dict(categories = categories)
 
 
+def get_social_links(request):
+    social_links = SocialLink.objects.all()
+    return dict(social_links=social_links)

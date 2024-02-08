@@ -19,6 +19,8 @@ from django.urls import include, path
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+# we cannot import two files with same names, thats why we are using as keyword to rename it
+from blogs import views as BlogsView
 
 
 urlpatterns = [
@@ -26,7 +28,10 @@ urlpatterns = [
     # The views represent a views module created in the blog_main directory
     # inside the views module, we will create a home function
     path('', views.home, name='home'),
-    path('category/', include('blogs.urls') )
+    path('category/', include('blogs.urls') ),
+    path('<slug:slug>', BlogsView.blogs, name='blogs'),
+    # Search endpoint
+    path('blogs/search', BlogsView.search, name="search"),
 ]
 
 # Add the following lines to serve media files during development

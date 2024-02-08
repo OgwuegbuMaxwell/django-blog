@@ -67,4 +67,8 @@
   .blog-footer p:last-child {
     margin-bottom: 0;
   }
+
+  #searchinput {
+    width: 200px !important;
+  }
   
