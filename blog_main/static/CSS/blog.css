@@ -72,3 +72,16 @@
     width: 200px !important;
   }
   
+
+
+  /* registration form styles */
+
+  #reg-form {
+    width: 500px !important;
+    margin-right: auto !important;
+    margin-left: auto;
+    margin-bottom: 5rem;
+    padding: 2rem 5rem;
+
+    background-color: #cee6f3;
+  }

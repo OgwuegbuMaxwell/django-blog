@@ -29,9 +29,12 @@ urlpatterns = [
     # inside the views module, we will create a home function
     path('', views.home, name='home'),
     path('category/', include('blogs.urls') ),
-    path('<slug:slug>', BlogsView.blogs, name='blogs'),
+    path('blogs/<slug:slug>/', BlogsView.blogs, name='blogs'),
     # Search endpoint
-    path('blogs/search', BlogsView.search, name="search"),
+    path('blogs/search/', BlogsView.search, name="search"),
+    path('register/', views.register, name='register' ),
+    path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
 ]
 
 # Add the following lines to serve media files during development
