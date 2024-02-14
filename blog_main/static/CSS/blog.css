@@ -85,3 +85,15 @@
 
     background-color: #cee6f3;
   }
+
+
+  .con-spacer {
+    margin-top: 5rem;
+  }
+
+  #new-category-form-con {
+    width: 500px;
+    border-radius: 20px;
+    background-color: #DFDFDF;
+    padding: 2rem 5rem;
+  }
