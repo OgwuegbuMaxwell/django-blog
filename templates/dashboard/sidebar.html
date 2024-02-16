@@ -1,9 +1,9 @@
    <!-- Left sidebar -->
    <div class="col-md-3"> 
     <div class="nav flex-column nav-pills bg-light" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a href="{% url 'dashboard' %}" class="nav-link text-dark  {% if '/dashboard/' == request.path %} active bg-warning {% endif %}" id="v-pills-home-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-home" aria-selected="true">Dashboard</a>
-        <a href="{% url 'categories' %}"  class="nav-link text-dark {% if '/dashboard/categories/' == request.path %} active bg-warning {% endif %}" id="v-pills-profile-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-profile" aria-selected="false">Category</a>
-        <a class="nav-link text-dark" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Posts</a>
+        <a href="{% url 'dashboard' %}" class="nav-link text-dark  {% if '/dashboard/' == request.path %} active bg-warning {% endif %}" id="v-pills-home-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-dashboard" aria-selected="true">Dashboard</a>
+        <a href="{% url 'categories' %}"  class="nav-link text-dark {% if '/dashboard/categories/' == request.path %} active bg-warning {% endif %}" id="v-pills-profile-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-category" aria-selected="false">Category</a>
+        <a href="{% url 'posts' %}"  class="nav-link text-dark {% if '/dashboard/posts/' == request.path %} active bg-warning {% endif %}" id="v-pills-profile-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-posts" aria-selected="false">Posts</a>
         <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Logout</a>
     </div>
 </div>
