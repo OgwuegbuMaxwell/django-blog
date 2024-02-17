@@ -2,8 +2,11 @@
    <div class="col-md-3"> 
     <div class="nav flex-column nav-pills bg-light" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a href="{% url 'dashboard' %}" class="nav-link text-dark  {% if '/dashboard/' == request.path %} active bg-warning {% endif %}" id="v-pills-home-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-dashboard" aria-selected="true">Dashboard</a>
-        <a href="{% url 'categories' %}"  class="nav-link text-dark {% if '/dashboard/categories/' == request.path %} active bg-warning {% endif %}" id="v-pills-profile-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-category" aria-selected="false">Category</a>
-        <a href="{% url 'posts' %}"  class="nav-link text-dark {% if '/dashboard/posts/' == request.path %} active bg-warning {% endif %}" id="v-pills-profile-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-posts" aria-selected="false">Posts</a>
+        {% if perms.auth.view_user %}
+        <a href="{% url 'users' %}" class="nav-link text-dark  {% if '/dashboard/users/' in request.path %} active bg-warning {% endif %}" id="v-pills-home-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-dashboard" aria-selected="true">User</a>
+        {% endif %}
+        <a href="{% url 'categories' %}"  class="nav-link text-dark {% if '/dashboard/categories/' in request.path %} active bg-warning {% endif %}" id="v-pills-profile-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-category" aria-selected="false">Category</a>
+        <a href="{% url 'posts' %}"  class="nav-link text-dark {% if '/dashboard/posts/' in request.path %} active bg-warning {% endif %}" id="v-pills-profile-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-posts" aria-selected="false">Posts</a>
         <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Logout</a>
     </div>
 </div>
