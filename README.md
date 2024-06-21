@@ -70,7 +70,5 @@ Make sure to update the `settings.py` file with your settings, especially the `S
 
 Contributions are welcome! Please fork the repository and open a pull request with your features or fixes.
 
-## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
 
